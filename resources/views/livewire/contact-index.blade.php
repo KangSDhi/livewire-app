@@ -2,6 +2,12 @@
 
     {{-- <livewire:contact-create :contacts="$contacts"></livewire:contact-create> --}}
 
+    @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
+
     <livewire:contact-create></livewire:contact-create>
 
     <hr>
