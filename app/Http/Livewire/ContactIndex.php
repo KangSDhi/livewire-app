@@ -10,6 +10,8 @@ class ContactIndex extends Component
 {
     use WithPagination;
 
+    protected $paginationTheme = 'bootstrap';
+
     public $statusUpdate = false;
 
     protected $listeners = [
@@ -20,7 +22,7 @@ class ContactIndex extends Component
     public function render()
     {
         return view('livewire.contact-index', [
-            'contacts' => Contact::latest()->simplePaginate(5)
+            'contacts' => Contact::latest()->paginate(5)
         ]);
     }
 
